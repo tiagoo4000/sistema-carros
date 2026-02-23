@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use App\Models\Documento;
 use App\Models\LogAuditoria;
 
@@ -142,12 +143,43 @@ class DocumentoUsuarioController extends Controller
             'arquivo.mimes' => 'Formato não suportado. Envie JPG, PNG, WEBP, HEIC/HEIF ou PDF.',
         ]);
 
-        try {
-            $path = $request->file('arquivo')->store('documentos', 'local');
-        } catch (\Throwable $e) {
-            return back()->withErrors([
-                'arquivo' => 'Não foi possível salvar o arquivo. Verifique as permissões da pasta de storage e o limite de upload do servidor.'
-            ]);
+        $file = $request->file('arquivo');
+        $mime = $file->getMimeType() ?: '';
+        $path = null;
+        if (str_starts_with($mime, 'image/') && function_exists('imagewebp')) {
+            try {
+                $tmp = $file->getPathname();
+                $img = null;
+                if ($mime === 'image/jpeg') {
+                    if (function_exists('imagecreatefromjpeg')) { $img = @imagecreatefromjpeg($tmp); }
+                } elseif ($mime === 'image/png') {
+                    if (function_exists('imagecreatefrompng')) { $img = @imagecreatefrompng($tmp); }
+                } elseif ($mime === 'image/webp') {
+                    if (function_exists('imagecreatefromwebp')) { $img = @imagecreatefromwebp($tmp); }
+                }
+                if ($img) {
+                    ob_start();
+                    @imagewebp($img, null, 80);
+                    $webpData = ob_get_clean();
+                    @imagedestroy($img);
+                    if ($webpData && strlen($webpData) > 0) {
+                        $filename = uniqid() . '-' . Str::slug($request->tipo) . '.webp';
+                        $path = 'documentos/' . $filename;
+                        Storage::disk('local')->put($path, $webpData);
+                    }
+                }
+            } catch (\Throwable $e) {
+                $path = null;
+            }
+        }
+        if (!$path) {
+            try {
+                $path = $file->store('documentos', 'local');
+            } catch (\Throwable $e) {
+                return back()->withErrors([
+                    'arquivo' => 'Não foi possível salvar o arquivo. Verifique as permissões da pasta de storage e o limite de upload do servidor.'
+                ]);
+            }
         }
         Documento::create([
             'usuario_id' => $user->id,
