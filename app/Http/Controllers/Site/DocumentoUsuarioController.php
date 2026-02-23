@@ -120,16 +120,35 @@ class DocumentoUsuarioController extends Controller
             return back()->withErrors(['status' => 'Envio bloqueado: sua verificação está '.$overall.'. Aguarde a análise do administrador.']);
         }
 
+        // Verificação antecipada para melhorar mensagens quando o PHP bloqueia o upload (post_max_size / upload_max_filesize)
+        if (!$request->hasFile('arquivo') || !$request->file('arquivo')->isValid()) {
+            return back()->withErrors([
+                'arquivo' => 'Falha no upload do arquivo. Verifique se o tamanho excede o limite do servidor (upload_max_filesize/post_max_size) e tente novamente.'
+            ]);
+        }
+
         $request->validate([
             'tipo' => 'required|string|in:rg,cnh,selfie,comprovante_residencia',
             'arquivo' => [
                 'required',
                 'file',
-                'max:8192',
-                'mimetypes:image/jpeg,image/png,image/webp,image/heic,image/heif,application/pdf'
+                'max:8192', // ~8MB (em KB)
+                'mimes:jpeg,jpg,png,webp,heic,heif,pdf'
             ],
+        ], [
+            'arquivo.required' => 'Selecione um arquivo para enviar.',
+            'arquivo.file' => 'Arquivo inválido.',
+            'arquivo.max' => 'Arquivo muito grande. Tamanho máximo permitido é de 8MB.',
+            'arquivo.mimes' => 'Formato não suportado. Envie JPG, PNG, WEBP, HEIC/HEIF ou PDF.',
         ]);
-        $path = $request->file('arquivo')->store('documentos', 'local');
+
+        try {
+            $path = $request->file('arquivo')->store('documentos', 'local');
+        } catch (\Throwable $e) {
+            return back()->withErrors([
+                'arquivo' => 'Não foi possível salvar o arquivo. Verifique as permissões da pasta de storage e o limite de upload do servidor.'
+            ]);
+        }
         Documento::create([
             'usuario_id' => $user->id,
             'tipo' => $request->tipo,
