@@ -1,0 +1,198 @@
+<?php
+
+return [
+    ['nome'=>'Manaus','uf'=>'AM'],
+['nome'=>'Parintins','uf'=>'AM'],
+['nome'=>'Itacoatiara','uf'=>'AM'],
+['nome'=>'Tefé','uf'=>'AM'],
+['nome'=>'Coari','uf'=>'AM'],
+
+['nome'=>'Belém','uf'=>'PA'],
+['nome'=>'Ananindeua','uf'=>'PA'],
+['nome'=>'Santarém','uf'=>'PA'],
+['nome'=>'Marabá','uf'=>'PA'],
+['nome'=>'Parauapebas','uf'=>'PA'],
+
+['nome'=>'Porto Velho','uf'=>'RO'],
+['nome'=>'Ji-Paraná','uf'=>'RO'],
+['nome'=>'Ariquemes','uf'=>'RO'],
+['nome'=>'Vilhena','uf'=>'RO'],
+['nome'=>'Cacoal','uf'=>'RO'],
+
+['nome'=>'Macapá','uf'=>'AP'],
+['nome'=>'Santana','uf'=>'AP'],
+['nome'=>'Laranjal do Jari','uf'=>'AP'],
+['nome'=>'Oiapoque','uf'=>'AP'],
+['nome'=>'Mazagão','uf'=>'AP'],
+
+['nome'=>'Boa Vista','uf'=>'RR'],
+['nome'=>'Rorainópolis','uf'=>'RR'],
+['nome'=>'Caracaraí','uf'=>'RR'],
+['nome'=>'Alto Alegre','uf'=>'RR'],
+['nome'=>'Mucajaí','uf'=>'RR'],
+
+['nome'=>'Palmas','uf'=>'TO'],
+['nome'=>'Araguaína','uf'=>'TO'],
+['nome'=>'Gurupi','uf'=>'TO'],
+['nome'=>'Porto Nacional','uf'=>'TO'],
+['nome'=>'Paraíso do Tocantins','uf'=>'TO'],
+
+/* ===== NORDESTE ===== */
+
+['nome'=>'Salvador','uf'=>'BA'],
+['nome'=>'Feira de Santana','uf'=>'BA'],
+['nome'=>'Vitória da Conquista','uf'=>'BA'],
+['nome'=>'Itabuna','uf'=>'BA'],
+['nome'=>'Juazeiro','uf'=>'BA'],
+
+['nome'=>'Fortaleza','uf'=>'CE'],
+['nome'=>'Caucaia','uf'=>'CE'],
+['nome'=>'Juazeiro do Norte','uf'=>'CE'],
+['nome'=>'Sobral','uf'=>'CE'],
+['nome'=>'Maracanaú','uf'=>'CE'],
+
+['nome'=>'Recife','uf'=>'PE'],
+['nome'=>'Jaboatão dos Guararapes','uf'=>'PE'],
+['nome'=>'Olinda','uf'=>'PE'],
+['nome'=>'Caruaru','uf'=>'PE'],
+['nome'=>'Petrolina','uf'=>'PE'],
+
+['nome'=>'São Luís','uf'=>'MA'],
+['nome'=>'Imperatriz','uf'=>'MA'],
+['nome'=>'Caxias','uf'=>'MA'],
+['nome'=>'Timon','uf'=>'MA'],
+['nome'=>'Bacabal','uf'=>'MA'],
+
+['nome'=>'Teresina','uf'=>'PI'],
+['nome'=>'Parnaíba','uf'=>'PI'],
+['nome'=>'Picos','uf'=>'PI'],
+['nome'=>'Floriano','uf'=>'PI'],
+['nome'=>'Piripiri','uf'=>'PI'],
+
+['nome'=>'Natal','uf'=>'RN'],
+['nome'=>'Mossoró','uf'=>'RN'],
+['nome'=>'Parnamirim','uf'=>'RN'],
+['nome'=>'Caicó','uf'=>'RN'],
+['nome'=>'Assu','uf'=>'RN'],
+
+['nome'=>'João Pessoa','uf'=>'PB'],
+['nome'=>'Campina Grande','uf'=>'PB'],
+['nome'=>'Santa Rita','uf'=>'PB'],
+['nome'=>'Patos','uf'=>'PB'],
+['nome'=>'Sousa','uf'=>'PB'],
+
+['nome'=>'Maceió','uf'=>'AL'],
+['nome'=>'Arapiraca','uf'=>'AL'],
+['nome'=>'Rio Largo','uf'=>'AL'],
+['nome'=>'Palmeira dos Índios','uf'=>'AL'],
+['nome'=>'Penedo','uf'=>'AL'],
+
+['nome'=>'Aracaju','uf'=>'SE'],
+['nome'=>'Nossa Senhora do Socorro','uf'=>'SE'],
+['nome'=>'Lagarto','uf'=>'SE'],
+['nome'=>'Itabaiana','uf'=>'SE'],
+['nome'=>'Estância','uf'=>'SE'],
+
+/* ===== CENTRO-OESTE ===== */
+
+['nome'=>'Brasília','uf'=>'DF'],
+['nome'=>'Taguatinga','uf'=>'DF'],
+['nome'=>'Ceilândia','uf'=>'DF'],
+['nome'=>'Gama','uf'=>'DF'],
+['nome'=>'Planaltina','uf'=>'DF'],
+
+['nome'=>'Goiânia','uf'=>'GO'],
+['nome'=>'Aparecida de Goiânia','uf'=>'GO'],
+['nome'=>'Anápolis','uf'=>'GO'],
+['nome'=>'Rio Verde','uf'=>'GO'],
+['nome'=>'Luziânia','uf'=>'GO'],
+
+['nome'=>'Cuiabá','uf'=>'MT'],
+['nome'=>'Várzea Grande','uf'=>'MT'],
+['nome'=>'Rondonópolis','uf'=>'MT'],
+['nome'=>'Sinop','uf'=>'MT'],
+['nome'=>'Sorriso','uf'=>'MT'],
+
+['nome'=>'Campo Grande','uf'=>'MS'],
+['nome'=>'Dourados','uf'=>'MS'],
+['nome'=>'Três Lagoas','uf'=>'MS'],
+['nome'=>'Corumbá','uf'=>'MS'],
+['nome'=>'Ponta Porã','uf'=>'MS'],
+
+/* ===== SUDESTE ===== */
+
+['nome'=>'São Paulo','uf'=>'SP'],
+['nome'=>'Campinas','uf'=>'SP'],
+['nome'=>'Santos','uf'=>'SP'],
+['nome'=>'Ribeirão Preto','uf'=>'SP'],
+['nome'=>'Sorocaba','uf'=>'SP'],
+['nome'=>'São José dos Campos','uf'=>'SP'],
+['nome'=>'Osasco','uf'=>'SP'],
+['nome'=>'Guarulhos','uf'=>'SP'],
+['nome'=>'Bauru','uf'=>'SP'],
+['nome'=>'Piracicaba','uf'=>'SP'],
+
+['nome'=>'Rio de Janeiro','uf'=>'RJ'],
+['nome'=>'Niterói','uf'=>'RJ'],
+['nome'=>'Duque de Caxias','uf'=>'RJ'],
+['nome'=>'Campos dos Goytacazes','uf'=>'RJ'],
+['nome'=>'Petrópolis','uf'=>'RJ'],
+['nome'=>'Nova Iguaçu','uf'=>'RJ'],
+['nome'=>'Volta Redonda','uf'=>'RJ'],
+['nome'=>'Macaé','uf'=>'RJ'],
+['nome'=>'Cabo Frio','uf'=>'RJ'],
+['nome'=>'Angra dos Reis','uf'=>'RJ'],
+
+['nome'=>'Belo Horizonte','uf'=>'MG'],
+['nome'=>'Uberlândia','uf'=>'MG'],
+['nome'=>'Contagem','uf'=>'MG'],
+['nome'=>'Juiz de Fora','uf'=>'MG'],
+['nome'=>'Montes Claros','uf'=>'MG'],
+['nome'=>'Uberaba','uf'=>'MG'],
+['nome'=>'Betim','uf'=>'MG'],
+['nome'=>'Ipatinga','uf'=>'MG'],
+['nome'=>'Divinópolis','uf'=>'MG'],
+['nome'=>'Governador Valadares','uf'=>'MG'],
+
+['nome'=>'Vitória','uf'=>'ES'],
+['nome'=>'Vila Velha','uf'=>'ES'],
+['nome'=>'Serra','uf'=>'ES'],
+['nome'=>'Cariacica','uf'=>'ES'],
+['nome'=>'Linhares','uf'=>'ES'],
+
+/* ===== SUL ===== */
+
+['nome'=>'Curitiba','uf'=>'PR'],
+['nome'=>'Londrina','uf'=>'PR'],
+['nome'=>'Maringá','uf'=>'PR'],
+['nome'=>'Ponta Grossa','uf'=>'PR'],
+['nome'=>'Cascavel','uf'=>'PR'],
+['nome'=>'Foz do Iguaçu','uf'=>'PR'],
+['nome'=>'Guarapuava','uf'=>'PR'],
+['nome'=>'Paranaguá','uf'=>'PR'],
+['nome'=>'Toledo','uf'=>'PR'],
+['nome'=>'Arapongas','uf'=>'PR'],
+
+['nome'=>'Florianópolis','uf'=>'SC'],
+['nome'=>'Joinville','uf'=>'SC'],
+['nome'=>'Blumenau','uf'=>'SC'],
+['nome'=>'Itajaí','uf'=>'SC'],
+['nome'=>'Chapecó','uf'=>'SC'],
+['nome'=>'Criciúma','uf'=>'SC'],
+['nome'=>'Jaraguá do Sul','uf'=>'SC'],
+['nome'=>'Lages','uf'=>'SC'],
+['nome'=>'Balneário Camboriú','uf'=>'SC'],
+['nome'=>'São José','uf'=>'SC'],
+
+['nome'=>'Porto Alegre','uf'=>'RS'],
+['nome'=>'Caxias do Sul','uf'=>'RS'],
+['nome'=>'Pelotas','uf'=>'RS'],
+['nome'=>'Santa Maria','uf'=>'RS'],
+['nome'=>'Gravataí','uf'=>'RS'],
+['nome'=>'Novo Hamburgo','uf'=>'RS'],
+['nome'=>'São Leopoldo','uf'=>'RS'],
+['nome'=>'Passo Fundo','uf'=>'RS'],
+['nome'=>'Rio Grande','uf'=>'RS'],
+['nome'=>'Uruguaiana','uf'=>'RS'],
+];
+
