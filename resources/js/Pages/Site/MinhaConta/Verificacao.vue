@@ -12,7 +12,6 @@ const props = defineProps({
 });
 
 const page = usePage();
-// Steps: 1 Documento com Foto (RG/CNH), 2 Selfie, 3 Comprovante, 4 Revisão/Final
 const step = ref(1);
 const totalSteps = 4;
 const progress = () => Math.round((step.value - 1) / (totalSteps - 1) * 100);
