@@ -1,9 +1,10 @@
 <script setup>
-import { Head, Link, useForm } from '@inertiajs/vue3';
+import { Head, Link, useForm, usePage } from '@inertiajs/vue3';
 import { ref, computed, watch } from 'vue';
 import { 
   Lock, Mail, User, Phone, FileText, Building2, MapPin, CheckCircle, XCircle 
 } from 'lucide-vue-next';
+import SiteLayout from '@/Layouts/SiteLayout.vue';
 
 const estados = [
   'AC','AL','AP','AM','BA','CE','DF','ES','GO','MA','MT','MS','MG','PA','PB','PR','PE','PI','RJ','RN','RS','RO','RR','SC','SP','SE','TO'
@@ -48,6 +49,8 @@ const checklist = computed(() => {
     num: /[0-9]/.test(v),
   };
 });
+const page = usePage();
+const siteName = computed(() => page.props.site_config?.site_name || 'LEILÃO PRO');
 
 const maskCPF = (val) => val.replace(/\D/g,'').slice(0,11).replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2');
 const maskCNPJ = (val) => val.replace(/\D/g,'').slice(0,14)
@@ -149,13 +152,14 @@ const submit = () => {
 
 <template>
   <Head title="Criar Conta" />
-  <div class="min-h-screen bg-gray-50 py-10">
+  <SiteLayout>
+  <div class="py-10">
     <div class="max-w-5xl mx-auto px-4">
       <div class="mb-8 text-center">
         <Link :href="route('home')" class="inline-flex items-center justify-center text-3xl font-extrabold tracking-tight text-[#002f6c]">
-          LEILÃO PRO
+          {{ siteName }}
         </Link>
-        <p class="mt-2 text-gray-500">Crie sua conta para participar de leilões com segurança.</p>
+        <p class="mt-2 text-gray-500">Crie sua conta e comece a dar seus lances agora mesmo.</p>
       </div>
 
       <div class="bg-white border border-gray-200 shadow-sm rounded-2xl overflow-hidden">
@@ -411,6 +415,7 @@ const submit = () => {
       </div>
     </div>
   </div>
+  </SiteLayout>
 </template>
 
 <style scoped>
